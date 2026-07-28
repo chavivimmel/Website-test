@@ -36,7 +36,7 @@
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            -webkit-tap-highlight-color: transparent; /* Prevents tap highlighting */
+            -webkit-tap-highlight-color: transparent;
         }
 
         :root {
@@ -68,7 +68,7 @@
             user-select: none;
         }
 
-        /* TOP ALERT BANNER (KEPT NUMBER HERE AS REQUESTED) */
+        /* TOP ALERT BANNER */
         .top-banner {
             background-color: var(--text-dark);
             color: #ffffff;
@@ -145,6 +145,11 @@
 
         .desktop-nav a:hover {
             color: #93c5fd;
+        }
+
+        .nav-donate-link {
+            color: #fde047 !important; /* Standout Gold */
+            font-weight: 700 !important;
         }
 
         .hotline-btn {
@@ -338,7 +343,7 @@
             background-color: rgba(255,255,255,0.25);
         }
 
-        /* MAIN CONTENT LAYOUT */
+        /* MAIN CONTAINER LAYOUT */
         .container {
             max-width: 1150px;
             margin: 0 auto;
@@ -499,7 +504,6 @@
             color: #cbd5e1;
         }
 
-        /* CALL BUTTON THAT LAUNCHES PHONE APP directly */
         .call-action-btn {
             display: inline-flex;
             align-items: center;
@@ -521,7 +525,7 @@
             transform: scale(1.02);
         }
 
-        /* VOLUNTEER SECTION */
+        /* VOLUNTEER & DONATE DUAL CTA SECTION */
         .volunteer-section {
             display: flex;
             flex-wrap: wrap;
@@ -535,7 +539,7 @@
         }
 
         .volunteer-text {
-            flex: 1 1 500px;
+            flex: 1 1 450px;
         }
 
         .volunteer-text h2 {
@@ -547,6 +551,13 @@
         .volunteer-text p {
             color: #15803d;
             font-size: 1.05rem;
+        }
+
+        .cta-button-group {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            align-items: center;
         }
 
         .btn-success {
@@ -562,6 +573,22 @@
 
         .btn-success:hover {
             background-color: #15803d;
+        }
+
+        .btn-donate {
+            background-color: #d97706; /* Warm Amber/Gold */
+            color: white;
+            padding: 0.9rem 1.85rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: var(--transition);
+            box-shadow: 0 2px 8px rgba(217, 119, 6, 0.25);
+        }
+
+        .btn-donate:hover {
+            background-color: #b45309;
         }
 
         /* FOOTER */
@@ -632,12 +659,22 @@
             .grid {
                 grid-template-columns: 1fr;
             }
+
+            .cta-button-group {
+                width: 100%;
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .cta-button-group a {
+                text-align: center;
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- TOP ALERT BANNER (ONLY PLACE WITH SHOWN PHONE NUMBER) -->
+    <!-- TOP ALERT BANNER -->
     <div class="top-banner">
         <span>Need Assistance or Relief?</span>
         <a href="tel:0342332200">Call Dispatch: (03) 4233 2200</a>
@@ -658,6 +695,7 @@
             <a href="#how-it-works" onclick="toggleMenu()">How Dispatch Works</a>
             <a href="#preparedness" onclick="toggleMenu()">Public Education</a>
             <a href="https://frontend.chavivim.org" target="_blank" onclick="toggleMenu()">Join As Volunteer</a>
+            <a href="https://frontend.chavivim.org" target="_blank" style="color: #fde047; font-weight: 700;" onclick="toggleMenu()">Make a Donation</a>
             <a href="tel:0342332200" class="hotline-btn" style="margin-top: 1rem; justify-content: center;">Call Dispatch Line</a>
         </nav>
     </aside>
@@ -679,6 +717,7 @@
                 <a href="#how-it-works">Dispatch Process</a>
                 <a href="#preparedness">Community Education</a>
                 <a href="https://frontend.chavivim.org" target="_blank">Join Us</a>
+                <a href="https://frontend.chavivim.org" target="_blank" class="nav-donate-link">Donate</a>
                 <a href="tel:0342332200" class="hotline-btn">Call Dispatch</a>
             </nav>
 
@@ -707,7 +746,7 @@
     <!-- MAIN CONTAINER -->
     <main class="container">
 
-        <!-- BENEVOLENT PURPOSE STATEMENT (ACNC CORE COMPLIANCE) -->
+        <!-- BENEVOLENT PURPOSE STATEMENT -->
         <section id="about" class="benevolent-card">
             <h2>Our Charitable Benevolent Purpose</h2>
             <p>
@@ -718,7 +757,7 @@
             </p>
         </section>
 
-        <!-- CRISIS RELIEF SERVICES (RE-FRAMED AROUND BENEVOLENT RELIEF) -->
+        <!-- CRISIS RELIEF SERVICES -->
         <section id="services">
             <div class="section-header">
                 <h2>Our Crisis Relief Services</h2>
@@ -802,7 +841,7 @@
             </div>
         </section>
 
-        <!-- CALL APP LAUNCH BUTTON (NO SHOWN PHONE NUMBER) -->
+        <!-- CALL APP LAUNCH BUTTON -->
         <section class="dispatch-box">
             <h2>Experiencing Distress or Need Immediate Aid?</h2>
             <p>Our volunteer dispatchers are on standby across Victoria to coordinate rapid practical relief.</p>
@@ -812,14 +851,15 @@
             <p style="font-size: 0.9rem; margin-top: 1rem; margin-bottom: 0;">Free Community Service &bull; Open to All</p>
         </section>
 
-        <!-- VOLUNTEER LINK (EXACT FRONTEND URL) -->
-        <section id="volunteer" class="volunteer-section">
+        <!-- VOLUNTEER & DONATE SECTION -->
+        <section id="support" class="volunteer-section">
             <div class="volunteer-text">
-                <h2>Join Our Volunteer Response Team</h2>
-                <p>Chavivim depends on dedicated community members willing to lend a helping hand. Join our network of responders, dispatch coordinators, and community supporters.</p>
+                <h2>Support Our Community Mission</h2>
+                <p>Chavivim relies on dedicated volunteers and generous community support to keep our crisis response services completely free to individuals facing hardship and distress.</p>
             </div>
-            <div>
+            <div class="cta-button-group">
                 <a href="https://frontend.chavivim.org" target="_blank" class="btn-success">Become a Volunteer</a>
+                <a href="https://frontend.chavivim.org" target="_blank" class="btn-donate">Support Our Work</a>
             </div>
         </section>
 
@@ -845,6 +885,7 @@
                     <li><a href="#how-it-works">Dispatch Process</a></li>
                     <li><a href="#preparedness">Community Education</a></li>
                     <li><a href="https://frontend.chavivim.org" target="_blank">Volunteer Portal</a></li>
+                    <li><a href="https://frontend.chavivim.org" target="_blank">Donate</a></li>
                 </ul>
             </div>
         </div>
