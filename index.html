@@ -1,540 +1,656 @@
 <!DOCTYPE html>
 <html lang="en-AU">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="content-language" content="en-AU" />
-    <title>Chavivim Volunteer Emergency Services Melbourne | Public Benevolent Institution</title>
-    <meta name="description" content="Chavivim is a registered Public Benevolent Institution providing benevolent relief, emergency preparedness, and practical assistance to relieve distress and hardship across Melbourne." />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="robots" content="index, follow">
+    <title>Chavivim Volunteer Emergency Services Limited | Benevolent Relief & Safety</title>
+    <meta name="description" content="Chavivim Volunteer Emergency Services Limited provides free crisis relief, roadside safety interventions, emergency response, and community preparedness across Australia.">
     
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Archivo+Black&amp;display=swap" rel="stylesheet" />
-    
+    <!-- Structured Data Schema for ACNC Compliance & Web Crawlers -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "NGO",
+      "name": "Chavivim Volunteer Emergency Services Limited",
+      "alternateName": "Chavivim Emergency Services",
+      "url": "https://chavivim.org.au",
+      "logo": "https://chavivim.org.au/logo.png",
+      "description": "A benevolent volunteer public organization providing free emergency relief, crisis intervention, severe weather support, and safety assistance to individuals in distress.",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Melbourne",
+        "addressRegion": "VIC",
+        "addressCountry": "AU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-37.8770",
+        "longitude": "145.0247"
+      },
+      "areaServed": {
+        "@type": "AdministrativeArea",
+        "name": "Victoria"
+      },
+      "nonprofitStatus": "Nonprofit501c3"
+    }
+    </script>
+
     <style>
-      * {
+        /* CSS RESET & VARIABLES */
+        *, *::before, *::after {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         :root {
-            --primary: #D32F2F;
-            --primary-dark: #B71C1C;
-            --secondary: #1565C0;
-            --accent: #FFA000;
-            --bg-light: #F5F5F5;
-            --bg-white: #FFFFFF;
-            --text-dark: #212121;
-            --text-light: #757575;
-            --border-color: #E0E0E0;
+            --primary: #1e3a8a;       /* Deep Navy */
+            --primary-hover: #1e40af;
+            --accent: #dc2626;        /* Emergency Red */
+            --text-dark: #0f172a;     /* Dark Charcoal */
+            --text-muted: #475569;    /* Muted Slate */
+            --bg-light: #f8fafc;      /* Off-White */
+            --card-bg: #ffffff;
+            --border-color: #e2e8f0;
+            --transition: all 0.3s ease;
         }
 
         body {
-            font-family: 'DM Sans', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
             color: var(--text-dark);
-            background: var(--bg-light);
+            background-color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
-            -webkit-tap-highlight-color: transparent;
         }
 
-        /* Navigation */
-        nav {
-            position: fixed;
+        /* HEADER & NAVIGATION */
+        header {
+            background-color: var(--primary);
+            color: #ffffff;
+            position: sticky;
             top: 0;
-            width: 100%;
-            background: var(--bg-white);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
             z-index: 1000;
-            border-bottom: 3px solid var(--primary);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
-        .nav-container {
-            max-width: 1400px;
+        .header-container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 1.2rem 2rem;
+            padding: 1rem 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
-        .logo-section img {
-            height: 65px;
-            width: auto;
-            display: block;
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+            color: #ffffff;
         }
 
-        .nav-links {
+        .brand-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        .brand-subtitle {
+            font-size: 0.75rem;
+            color: #93c5fd;
+            display: block;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Desktop Nav */
+        .desktop-nav {
             display: flex;
-            gap: 2.5rem;
-            list-style: none;
+            gap: 1.5rem;
             align-items: center;
         }
 
-        .nav-links a {
+        .desktop-nav a {
+            color: #ffffff;
             text-decoration: none;
-            color: var(--text-dark);
             font-weight: 500;
             font-size: 0.95rem;
-            transition: color 0.3s ease;
+            transition: var(--transition);
         }
 
-        .nav-links a:hover {
-            color: var(--primary);
+        .desktop-nav a:hover {
+            color: #93c5fd;
         }
 
         .emergency-btn {
-            background: var(--primary);
-            color: white !important;
-            padding: 0.65rem 1.2rem;
+            background-color: var(--accent);
+            color: #ffffff !important;
+            padding: 0.5rem 1rem;
             border-radius: 6px;
-            font-weight: 700;
-            font-size: 0.8rem;
-            transition: all 0.3s ease;
-            letter-spacing: 0.02em;
-            white-space: nowrap;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
         }
 
         .emergency-btn:hover {
-            background: var(--primary-dark);
+            background-color: #b91c1c;
         }
 
-        /* Hamburger Menu Icon */
-        .menu-toggle {
+        /* Hamburger Button */
+        .hamburger-btn {
             display: none;
-            flex-direction: column;
-            gap: 6px;
-            cursor: pointer;
             background: none;
             border: none;
+            cursor: pointer;
             padding: 0.5rem;
+            color: white;
+        }
+
+        .hamburger-btn span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 5px 0;
+            transition: var(--transition);
+            border-radius: 2px;
+        }
+
+        /* MOBILE SIDEBAR (HALF SCREEN OVERLAY) */
+        .sidebar-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(0, 0, 0, 0.5);
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition);
             z-index: 1001;
         }
 
-        .menu-toggle span {
-            display: block;
-            width: 28px;
-            height: 3px;
-            background-color: var(--text-dark);
-            transition: all 0.3s ease;
+        .sidebar-overlay.active {
+            opacity: 1;
+            visibility: visible;
         }
 
-        /* Mobile Menu Open States */
-        .menu-toggle.active span:nth-child(1) {
-            transform: translateY(9px) rotate(45deg);
-        }
-        .menu-toggle.active span:nth-child(2) {
-            opacity: 0;
-        }
-        .menu-toggle.active span:nth-child(3) {
-            transform: translateY(-9px) rotate(-45deg);
-        }
-
-        /* Responsive Mobile Layouts */
-        @media (max-width: 992px) {
-            .menu-toggle {
-                display: flex;
-            }
-
-            .nav-links {
-                position: fixed;
-                top: 92px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 92px);
-                background: var(--bg-white);
-                flex-direction: column;
-                align-items: center;
-                padding-top: 3rem;
-                gap: 2rem;
-                transition: left 0.3s ease;
-                box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            }
-
-            .nav-links.active {
-                left: 0;
-            }
-
-            .emergency-btn {
-                width: 80%;
-                text-align: center;
-            }
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 50vw; /* Takes exactly half screen as requested */
+            min-width: 260px; /* Ensures readablity on smaller screens */
+            max-width: 380px;
+            height: 100vh;
+            background-color: var(--primary);
+            z-index: 1002;
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            padding: 2rem 1.5rem;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 15px rgba(0,0,0,0.2);
         }
 
-        /* Alerts Banner Container */
-        .alert-banner {
-            display: block; 
-            background: #FFF3CD; 
-            border-bottom: 2px solid #FFEBAA; 
-            color: #856404; 
-            padding: 1.2rem 2rem; 
-            margin-top: 92px; 
-            font-size: 0.95rem;
+        .mobile-sidebar.active {
+            transform: translateX(0);
         }
 
-        .alert-container {
-            max-width: 1400px; 
-            margin: 0 auto; 
-            display: flex; 
-            align-items: center; 
-            gap: 1.2rem; 
+        .sidebar-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 1rem;
+        }
+
+        .close-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.8rem;
+            cursor: pointer;
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            gap: 1.25rem;
+        }
+
+        .mobile-nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.05rem;
+            font-weight: 500;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.9)), 
+                        url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
+            color: white;
+            padding: 5rem 1.5rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.75rem;
+            line-height: 1.2;
+            margin-bottom: 1.25rem;
+            font-weight: 800;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #e2e8f0;
+            margin-bottom: 2rem;
+        }
+
+        .hero-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
             flex-wrap: wrap;
         }
 
-        .alert-badge {
-            background: #DC3545; 
-            color: white; 
-            padding: 0.3rem 0.7rem; 
-            border-radius: 4px; 
-            font-weight: bold; 
-            font-size: 0.75rem; 
-            text-transform: uppercase; 
-            letter-spacing: 0.05em;
-            white-space: nowrap;
-        }
-
-        .alert-text-link {
-            color: #533f03;
-            font-weight: 700;
-            text-decoration: underline;
-            margin-left: 0.5rem;
-        }
-
-        /* Hero Section */
-        .hero {
-            position: relative;
-            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+        .btn-primary {
+            background-color: var(--accent);
             color: white;
-            padding: 6rem 2rem;
-            overflow: hidden;
+            padding: 0.85rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
         }
 
-        .hero-container { max-width: 1400px; margin: 0 auto; }
-        .hero h1 { font-family: 'Archivo Black', sans-serif; font-size: clamp(2.2rem, 5.5vw, 4.5rem); line-height: 1.1; margin-bottom: 1.5rem; letter-spacing: -0.03em; }
-        .hero h1 .highlight { color: var(--accent); }
-        .hero p { font-size: 1.25rem; margin-bottom: 1.5rem; color: rgba(255,255,255,0.9); max-width: 650px; }
+        .btn-primary:hover {
+            background-color: #b91c1c;
+        }
 
-        /* Hotline Section */
-        .hotline { background: var(--primary); padding: 3rem 2rem; text-align: center; }
-        .hotline h2 { font-family: 'Archivo Black', sans-serif; font-size: 1.5rem; color: white; margin-bottom: 1rem; letter-spacing: 0.05em; text-transform: uppercase; }
-        .hotline-number { font-family: 'Archivo Black', sans-serif; font-size: clamp(2rem, 5vw, 4rem); color: white; letter-spacing: 0.1em; text-decoration: none; display: inline-block; transition: all 0.3s ease; padding: 1rem 2rem; border-radius: 10px; }
-        .hotline-number:hover { background: rgba(255,255,255,0.1); transform: scale(1.05); }
+        .btn-secondary {
+            background-color: rgba(255,255,255,0.15);
+            color: white;
+            padding: 0.85rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: var(--transition);
+        }
 
-        /* CTA Buttons */
-        .cta-section { padding: 4rem 2rem; background: var(--bg-white); }
-        .cta-container { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
-        .cta-card { background: white; border-radius: 8px; padding: 3rem 2.5rem; text-align: center; transition: all 0.3s ease; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
-        .cta-card:hover { transform: translateY(-8px); box-shadow: 0 12px 24px rgba(0,0,0,0.15); }
-        .cta-icon { width: 70px; height: 70px; margin: 0 auto 1.5rem; background: linear-gradient(135deg, var(--primary), var(--primary-dark)); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 2rem; }
-        .cta-card h3 { font-family: 'Archivo Black', sans-serif; font-size: 1.4rem; margin-bottom: 1rem; color: var(--text-dark); }
-        .cta-card p { color: var(--text-light); margin-bottom: 2rem; font-size: 1rem; }
-        
-        .btn { display: inline-block; padding: 1rem 2.5rem; border-radius: 6px; text-decoration: none; font-weight: 700; font-size: 0.95rem; transition: all 0.3s ease; border: none; }
-        .btn-primary { background: var(--primary); color: white; }
-        .btn-primary:hover { background: var(--primary-dark); }
-        .btn-secondary { background: var(--secondary); color: white; }
-        .btn-accent { background: var(--accent); color: white; }
+        .btn-secondary:hover {
+            background-color: rgba(255,255,255,0.25);
+        }
 
-        /* Generic Layout blocks */
-        .section-padding { padding: 6rem 2rem; }
-        .container-width { max-width: 1200px; margin: 0 auto; }
+        /* MAIN CONTENT LAYOUT */
+        .container {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding: 4rem 1.5rem;
+        }
 
-        .service-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2.5rem; margin-top: 3rem; }
-        .service-category { background: white; padding: 3rem 2.5rem; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.08); transition: all 0.3s ease; }
-        .service-category h3 { font-family: 'Archivo Black', sans-serif; font-size: 1.3rem; margin-bottom: 1rem; }
-        .service-list { list-style: none; margin-top: 1rem; }
-        .service-list li { padding: 0.6rem 0; border-bottom: 1px solid #f0f0f0; color: var(--text-light); position: relative; padding-left: 1.5rem; }
-        .service-list li::before { content: "✓"; position: absolute; left: 0; color: var(--primary); font-weight: bold; }
+        /* BENEVOLENT CHARITABLE BANNER (ACNC Core Requirement) */
+        .benevolent-card {
+            background-color: #eff6ff;
+            border-left: 5px solid var(--primary);
+            border-radius: 0 8px 8px 0;
+            padding: 2rem;
+            margin-bottom: 3.5rem;
+        }
 
-        /* Form styling */
-        .form-group { margin-bottom: 1.5rem; }
-        .form-group label { display: block; margin-bottom: 0.5rem; font-weight: 600; }
-        .form-group input, .form-group textarea { width: 100%; padding: 1rem; border: 2px solid var(--border-color); border-radius: 8px; }
+        .benevolent-card h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+        }
 
-        /* Footer elements */
-        footer { background: #1a1a1a; color: white; padding: 4rem 2rem 2rem; }
-        .footer-container { max-width: 1400px; margin: 0 auto; }
-        .footer-content { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 3rem; }
-        .footer-section h3 { font-family: 'Archivo Black', sans-serif; color: var(--accent); margin-bottom: 1rem; }
-        .footer-section p, .footer-section a { color: rgba(255,255,255,0.8); text-decoration: none; display: block; margin-bottom: 0.5rem; }
-        .footer-bottom { border-top: 1px solid rgba(255,255,255,0.1); padding-top: 2rem; text-align: center; margin-top: 2rem; color: rgba(255,255,255,0.5); }
+        .benevolent-card p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* GRID SYSTEM FOR SERVICES & PREPAREDNESS */
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .section-header h2 {
+            font-size: 2rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 2rem;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.03);
+            transition: var(--transition);
+        }
+
+        .card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.06);
+        }
+
+        .card-icon {
+            width: 48px;
+            height: 48px;
+            background-color: #dbeafe;
+            color: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.25rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .card h3 {
+            font-size: 1.25rem;
+            margin-bottom: 0.75rem;
+            color: var(--text-dark);
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* PUBLIC AVAILABILITY & ELIGIBILITY BANNER */
+        .eligibility-box {
+            background: linear-gradient(135deg, var(--primary), #0f172a);
+            color: white;
+            padding: 3rem 2rem;
+            border-radius: 12px;
+            text-align: center;
+            margin: 4rem 0;
+        }
+
+        .eligibility-box h2 {
+            font-size: 1.85rem;
+            margin-bottom: 1rem;
+        }
+
+        .eligibility-box p {
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.05rem;
+            color: #cbd5e1;
+        }
+
+        /* FOOTER */
+        footer {
+            background-color: var(--text-dark);
+            color: #94a3b8;
+            padding: 3.5rem 1.5rem 2rem;
+            font-size: 0.9rem;
+            border-top: 1px solid #1e293b;
+        }
+
+        .footer-container {
+            max-width: 1150px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2.5rem;
+            margin-bottom: 2.5rem;
+        }
+
+        .footer-col h4 {
+            color: white;
+            font-size: 1rem;
+            margin-bottom: 1.25rem;
+        }
+
+        .footer-col p, .footer-col ul {
+            list-style: none;
+            line-height: 1.7;
+        }
+
+        .footer-col a {
+            color: #94a3b8;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            max-width: 1150px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid #1e293b;
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* MEDIA QUERIES */
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+
+            .hamburger-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
-  </head>
-  <body>
+</head>
+<body>
 
-    <!-- Navigation -->
-    <nav>
-      <div class="nav-container">
-        <div class="logo-section">
-          <img src="chavivim-logo.png" alt="Chavivim Logo" />
+    <!-- OVERLAY FOR MOBILE SIDEBAR -->
+    <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMenu()"></div>
+
+    <!-- MOBILE SIDEBAR (HALF SCREEN OVERLAY) -->
+    <aside class="mobile-sidebar" id="mobileSidebar">
+        <div class="sidebar-header">
+            <span style="color: white; font-weight: bold; font-size: 1.1rem;">Chavivim</span>
+            <button class="close-btn" onclick="toggleMenu()" aria-label="Close Menu">&times;</button>
         </div>
-        
-        <!-- Interactive 3-Line Mobile Toggle Button -->
-        <button class="menu-toggle" id="mobile-menu-btn" aria-label="Toggle navigation">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        <nav class="mobile-nav">
+            <a href="#about" onclick="toggleMenu()">About Our Purpose</a>
+            <a href="#services" onclick="toggleMenu()">Crisis Relief</a>
+            <a href="#preparedness" onclick="toggleMenu()">Public Education</a>
+            <a href="#eligibility" onclick="toggleMenu()">Public Access</a>
+            <a href="tel:000" class="emergency-btn" style="margin-top: 1rem; justify-content: center;">24/7 Relief Line</a>
+        </nav>
+    </aside>
 
-        <ul class="nav-links" id="nav-menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#programs">Benevolent Programs</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <li><a href="tel:+61342332200" class="emergency-btn">Request Support</a></li>
-        </ul>
-      </div>
-    </nav>
+    <!-- HEADER / NAVIGATION -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="brand">
+                <div>
+                    <span class="brand-title">Chavivim</span>
+                    <span class="brand-subtitle">Volunteer Emergency Services</span>
+                </div>
+            </a>
 
-    <!-- Broad Community Alerts & Technology Safety Banner -->
-    <div class="alert-banner" id="community-alerts">
-      <div class="alert-container">
-        <span class="alert-badge">Privacy Alert</span>
-        <div style="flex: 1; font-weight: 500;">
-          <!-- EDIT CONTENT FREELY HERE -->
-          Recent security reports highlight vulnerabilities exposing consumer dashcam streams publicly. If you use an internet-connected smart-dashcam, your data might be exposed. <a href="#preparedness" class="alert-text-link">Click here for checking instructions and safety steps.</a>
-          <!-- END OF CONTENT -->
+            <!-- Desktop Navigation -->
+            <nav class="desktop-nav">
+                <a href="#about">About Our Purpose</a>
+                <a href="#services">Crisis Relief Services</a>
+                <a href="#preparedness">Community Preparedness</a>
+                <a href="#eligibility">Public Access</a>
+                <a href="tel:000" class="emergency-btn">
+                    <span>Emergency Relief</span>
+                </a>
+            </nav>
+
+            <!-- Hamburger Button for Mobile -->
+            <button class="hamburger-btn" onclick="toggleMenu()" aria-label="Open Navigation Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-        <span style="font-size: 0.85rem; opacity: 0.8; white-space: nowrap;">
-          Updated: July 2026
-        </span>
-      </div>
-    </div>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <div class="hero-container">
+    <!-- HERO SECTION -->
+    <section class="hero">
         <div class="hero-content">
-          <h1>Chavivim <span class="highlight">Public Benevolent</span> Institution</h1>
-          <p>Providing immediate benevolent relief, distress support, and preventative safety programs to individuals experiencing crisis or severe hardship across Melbourne.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Emergency Hotline Call-to-Action -->
-    <section class="hotline">
-      <div class="hotline-container">
-        <h2>24-Hour Benevolent Relief Line</h2>
-        <a href="tel:+61342332200" class="hotline-number">03-4233-2200</a>
-      </div>
-    </section>
-
-    <!-- Main Entry Gateways -->
-    <section class="cta-section">
-      <div class="cta-container">
-        <div class="cta-card">
-          <div class="cta-icon">📋</div>
-          <h3>Request Hardship Aid</h3>
-          <p>Are you facing acute distress, localized storm disruption, or find yourself stranded? Contact our volunteers for direct assistance.</p>
-          <a href="tel:+61342332200" class="btn btn-primary">Request Aid</a>
-        </div>
-        <div class="cta-card">
-          <div class="cta-icon">💝</div>
-          <h3>Support the Charity</h3>
-          <p>Help us maintain our community emergency support network and deliver compassionate relief to vulnerable families.</p>
-          <a href="https://www.chibashachesed.org.au/donations/chavivim/" target="_blank" class="btn btn-accent">Donate Safely</a>
-        </div>
-        <div class="cta-card">
-          <div class="cta-icon">🤝</div>
-          <h3>Become a Volunteer</h3>
-          <p>Give back to your community. Join Chavivim as a trained volunteer providing relief to individuals in severe misfortune.</p>
-          <a href="https://frontend.chavivim.org" target="_blank" class="btn btn-secondary">Apply Today</a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Primary Program: Community Education, Privacy & Preparedness Feature -->
-    <section class="section-padding" style="background: var(--bg-white); border-bottom: 1px solid var(--border-color);" id="preparedness">
-      <div class="container-width">
-        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-light); font-weight: 600; margin-bottom: 1.5rem; border-left: 3px solid var(--secondary); padding-left: 1rem;">
-          Primary Pillar Activity
-        </p>
-        <h2 style="font-family: 'Archivo Black', sans-serif; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; color: var(--text-dark); letter-spacing: -0.02em;">
-          Community Risk Awareness & Safety Preparedness
-        </h2>
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 3rem; margin-top: 2rem;">
-          <div>
-            <p style="font-size: 1.05rem; color: var(--text-dark); font-weight: 500; margin-bottom: 1rem;">
-              Preventative Training & Resilience Building
-            </p>
-            <p style="color: var(--text-light); line-height: 1.8; margin-bottom: 1.5rem;">
-              Chavivim structures robust community awareness and safety educational programs across Melbourne to help mitigate crises before they emerge. By distributing vital weather-safety data, holding hazard-management information sessions, and tracking consumer digital privacy risks, we work proactively to reduce vulnerability and strengthen community resilience.
-            </p>
-            
-            <!-- Broad Warning Instruction Template Example requested in prompt -->
-            <div style="background: var(--bg-light); border-left: 4px solid var(--accent); padding: 1.2rem; border-radius: 4px;">
-              <h4 style="font-weight: 700; font-size: 0.95rem; margin-bottom: 0.5rem; color: var(--text-dark);">🔒 Smart Device & Dashcam Privacy Steps:</h4>
-              <p style="font-size: 0.9rem; color: var(--text-light); line-height: 1.5;">
-                To secure your vehicle's integrated or aftermarket cloud dashcams from public visibility exposures: Disable default P2P cloud cloud-sharing configurations inside your camera's configuration application, change standard factory passwords immediately, and switch off default public streaming options under the system preferences menu.
-              </p>
+            <h1>Relieving Distress & Protecting Vulnerable Lives in Crisis</h1>
+            <p>A registered Australian benevolent volunteer organization dedicated to providing immediate practical relief, severe weather intervention, and hardship assistance to individuals facing hazardous emergencies.</p>
+            <div class="hero-actions">
+                <a href="#services" class="btn-primary">View Crisis Services</a>
+                <a href="#preparedness" class="btn-secondary">Emergency Preparedness</a>
             </div>
-          </div>
-          <div>
-            <p style="font-size: 1.05rem; color: var(--text-dark); font-weight: 500; margin-bottom: 1rem;">
-              Our Educational Initiatives Include:
+        </div>
+    </section>
+
+    <!-- MAIN BODY CONTAINER -->
+    <main class="container">
+
+        <!-- BENEVOLENT PURPOSE STATEMENT (ACNC Core Legal Requirement) -->
+        <section id="about" class="benevolent-card">
+            <h2>Our Charitable Benevolent Purpose</h2>
+            <p>
+                Chavivim Volunteer Emergency Services Limited is established exclusively as a public benevolent institution to provide free, immediate, and practical relief to individuals suffering from acute distress, physical hazard, helpless conditions, or personal crisis. Operating as a volunteer-driven service, our relief missions are designed to alleviate suffering, prevent bodily harm, and protect vulnerable motorists and community members facing sudden hardship.
             </p>
-            <ul style="list-style: none; padding: 0;">
-              <li style="padding: 0.5rem 0; color: var(--text-light); border-bottom: 1px solid #f0f0f0;"><strong>• Environmental Hazard Briefings:</strong> Free public guides for secure property prep ahead of extreme flash floods or winter storm cycles.</li>
-              <li style="padding: 0.5rem 0; color: var(--text-light); border-bottom: 1px solid #f0f0f0;"><strong>• Roadside Safety Seminars:</strong> Practical guidance on vehicle health checkups, preventative maintenance, and basic defensive breakdown safety.</li>
-              <li style="padding: 0.5rem 0; color: var(--text-light);"><strong>• Digital Privacy & Security Tracking:</strong> Educational instructions tracking shared software flaws to protect residents from unexpected tracking exposures.</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+        </section>
 
-    <!-- WhatsApp Status Block / Community Engagement Content -->
-    <section class="section-padding" style="background: var(--bg-light); border-bottom: 1px solid var(--border-color);">
-      <div class="container-width" style="text-align: center; max-width: 750px;">
-        <h2 style="font-family: 'Archivo Black', sans-serif; font-size: clamp(1.8rem, 4vw, 2.5rem); margin-bottom: 1rem;">Live Community Feed Updates</h2>
-        <p style="color: var(--text-light); font-size: 1.1rem; margin-bottom: 2rem;">
-          We publish direct operational breakdowns, incident summaries, safety alerts, and on-scene photos directly to our organizational WhatsApp Status framework. Keep connected to your community's active resilience networks.
-        </p>
-        <!-- Replace placeholder link with actual target number/link when ready -->
-        <a href="https://wa.me/61342332200?text=Subscribe%20to%20Status%20Updates" target="_blank" class="btn" style="background: #25D366; color: white; display: inline-flex; align-items: center; gap: 0.8rem; font-size: 1.1rem; padding: 1.1rem 2.5rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(37, 211, 102, 0.25);">
-          <span>Subscribe via WhatsApp Status</span>
-        </a>
-      </div>
-    </section>
+        <!-- CRISIS RELIEF SERVICES SECTION -->
+        <section id="services">
+            <div class="section-header">
+                <h2>Practical Crisis & Hardship Relief</h2>
+                <p>We intervene directly when unexpected roadside breakdowns, hazardous physical entrapments, or severe weather conditions place individuals in immediate distress or helplessness.</p>
+            </div>
 
-    <!-- Constitutional Framework / About Section -->
-    <section class="about section-padding" id="about" style="background: var(--bg-white);">
-      <div class="container-width">
-        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-light); font-weight: 600; margin-bottom: 1.5rem; border-left: 3px solid var(--primary); padding-left: 1rem;">
-          Our Framework
-        </p>
-        <h2 style="font-family: 'Archivo Black', sans-serif; font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 2rem; color: var(--text-dark);">Our Benevolent Purpose</h2>
-        <p style="font-size: 1.1rem; color: var(--text-light); line-height: 1.9; margin-bottom: 1.5rem;">
-          Chavivim Volunteer Emergency Services is a registered non-profit Public Benevolent Institution (PBI) whose exclusive constitutional object is the relief of poverty, distress, helplessness, and misfortune. Our network of mobile volunteers steps into spaces of unexpected trauma and environmental disruption to deliver fast, practical, and completely free humanitarian comfort to anyone experiencing crisis.
-        </p>
-      </div>
-    </section>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">&#9888;</div>
+                    <h3>Roadside Crisis Intervention</h3>
+                    <p>Providing rapid physical protection and technical intervention for stranded drivers in vulnerable or dangerous highway locations, preventing exposure to traffic hazards, physical assault, or severe climatic elements.</p>
+                </div>
 
-    <!-- Specific Core Benevolent Programs Grid -->
-    <section class="section-padding" id="programs" style="background: var(--bg-light);">
-      <div class="container-width">
-        <p style="font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.2em; color: var(--text-light); font-weight: 600; margin-bottom: 1rem; border-left: 3px solid var(--primary); padding-left: 1rem;">
-          Activities
-        </p>
-        <h2 style="font-family: 'Archivo Black', sans-serif; font-size: clamp(2rem, 4vw, 3rem);">How We Alleviate Distress</h2>
-        <div class="service-grid">
-          <div class="service-category">
-            <h3>📖 Risk Education</h3>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Proactive community resource provision to empower community resilience.</p>
-            <ul class="service-list">
-              <li>Severe Weather Property Audits</li>
-              <li>Public Privacy & Safety Briefings</li>
-              <li>Crisis Mitigation Workshops</li>
-            </ul>
-          </div>
-          <div class="service-category">
-            <h3>🚨 Disruption Support</h3>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Rapid mobilization to combat direct environmental trauma or hardship spikes.</p>
-            <ul class="service-list">
-              <li>Emergency Storm Cleanup Aid</li>
-              <li>Local Flood Displacement Care</li>
-              <li>Missing Persons Search Volunteers</li>
-            </ul>
-          </div>
-          <div class="service-category">
-            <h3>🛠️ Practical Hardship Aid</h3>
-            <p style="color: var(--text-light); font-size: 0.95rem;">Tangible on-scene relief actions protecting isolated or helpless individuals.</p>
-            <ul class="service-list">
-              <li>Emergency Lockout Entry (Safety Focused)</li>
-              <li>Hazardous Area Roadside Stranded Support</li>
-              <li>Crisis Vehicle Extraction & Jump Starts</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </section>
+                <div class="card">
+                    <div class="card-icon">&#127783;</div>
+                    <h3>Severe Weather & Flood Rescue</h3>
+                    <p>Deploying specialized volunteer response teams during severe weather warnings and flood conditions to assist stranded motorists, assist localized evacuations, and safely extricate vulnerable citizens from hazard zones.</p>
+                </div>
 
-    <!-- Contact Form with Secure Backend Config -->
-    <section class="contact section-padding" id="contact" style="background: var(--bg-white);">
-      <div class="container-width" style="max-width: 700px;">
-        <h2 style="font-family: 'Archivo Black', sans-serif; text-align: center; margin-bottom: 2rem;">Administrative Inquiries</h2>
-        <form action="https://formsubmit.co/Melbourne@chavivim.org" method="POST">
-          <input type="hidden" name="_subject" value="New message from Chavivim website" />
-          <input type="hidden" name="_template" value="table" />
-          <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off" />
-          
-          <div class="form-group">
-            <label for="name">Name *</label>
-            <input type="text" id="name" name="name" required placeholder="Your full name" />
-          </div>
-          <div class="form-group">
-            <label for="email">Email *</label>
-            <input type="email" id="email" name="email" required placeholder="your.email@example.com" />
-          </div>
-          <div class="form-group">
-            <label for="message">Message *</label>
-            <textarea id="message" name="message" rows="5" required placeholder="Type your inquiry here..."></textarea>
-          </div>
-          <button type="submit" class="btn btn-primary" style="width: 100%; border: none; cursor: pointer; font-size: 1rem;">Submit Inquiry</button>
-        </form>
-      </div>
-    </section>
+                <div class="card">
+                    <div class="card-icon">&#10084;</div>
+                    <h3>Vulnerability & Hardship Support</h3>
+                    <p>Prioritizing immediate crisis aid for high-risk demographics—including elderly drivers, single parents stranded with young children, people with disabilities, and individuals without financial means or support systems during breakdowns.</p>
+                </div>
+            </div>
+        </section>
 
-    <!-- Legally Compliant Footer -->
+        <!-- PUBLIC PREPAREDNESS & AWARENESS (Addresses Legal Requirement Point 4) -->
+        <section id="preparedness">
+            <div class="section-header">
+                <h2>Public Awareness & Emergency Preparedness</h2>
+                <p>Equipping Australian communities with the knowledge, resources, and preventative skills necessary to survive environmental hazards and roadside emergencies safely.</p>
+            </div>
+
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon">&#128216;</div>
+                    <h3>Community Safety Outreach</h3>
+                    <p>Conducting public workshops and safety awareness campaigns focused on emergency roadside survival protocols, vehicle safety checks, and crisis management techniques.</p>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">&#128226;</div>
+                    <h3>Severe Weather Survival Education</h3>
+                    <p>Distributing accessible educational materials advising the public on how to navigate flooded roadways safely, prepare emergency kits, and mitigate risks during localized storm disasters.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PUBLIC ACCESS & ELIGIBILITY (Addresses Legal Requirement Point 5) -->
+        <section id="eligibility" class="eligibility-box">
+            <h2>Available to All Eligible Members of the Public</h2>
+            <p>
+                All emergency relief, crisis assistance, and preparedness services provided by Chavivim Volunteer Emergency Services Limited are delivered entirely <strong>free of charge</strong>. Our charitable relief is available to any eligible member of the public in distress across our operational coverage area, strictly without discrimination regarding background, belief, or affiliation.
+            </p>
+            <a href="tel:000" class="btn-primary" style="background-color: white; color: var(--primary);">Contact Emergency Relief Unit</a>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
     <footer>
-      <div class="footer-container">
-        <div class="footer-content">
-          <div class="footer-section">
-            <h3>Chavivim Volunteer Emergency Services</h3>
-            <p>Melbourne, Victoria</p>
-            <p style="font-size: 0.85rem; opacity: 0.6; margin-top: 1rem; line-height: 1.5;">
-              Chavivim Volunteer Emergency Services Limited is an incorporated non-profit entity registered in Australia. 
-              <br><span style="color: var(--accent); font-weight: bold;">ABN: [Insert Your ABN Here]</span>
-            </p>
-          </div>
-          <div class="footer-section">
-            <h3>Contact Line</h3>
-            <a href="tel:+61342332200">Relief Ops: 03-4233-2200</a>
-            <p style="font-size: 0.9rem; opacity: 0.6; margin-top: 0.5rem;">Operating 24 hours, 6 days a week (Closed Saturdays)</p>
-          </div>
-          <div class="footer-section">
-            <h3>Charity Digital Presence</h3>
-            <a href="mailto:Melbourne@chavivim.org">Melbourne@chavivim.org</a>
-          </div>
+        <div class="footer-container">
+            <div class="footer-col">
+                <h4>Chavivim Emergency Services</h4>
+                <p>A registered Australian public benevolent institution committed to relieving distress, hardship, and helplessness through volunteer crisis response and public safety initiatives.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Legal & Regulatory</h4>
+                <p><strong>ACN:</strong> Registered in Australia</p>
+                <p><strong>ABN:</strong> [Insert ABN Here]</p>
+                <p>Regulated by the Australian Charities and Not-for-profits Commission (ACNC).</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#about">Benevolent Objects</a></li>
+                    <li><a href="#services">Crisis Relief Services</a></li>
+                    <li><a href="#preparedness">Public Education</a></li>
+                    <li><a href="#eligibility">Public Accessibility</a></li>
+                </ul>
+            </div>
         </div>
         <div class="footer-bottom">
-          <p>© 2026 Chavivim.org.au - Public Benevolent Institution Test Domain</p>
+            <p>&copy; 2026 Chavivim Volunteer Emergency Services Limited. All rights reserved. Services offered free to the public in distress.</p>
         </div>
-      </div>
     </footer>
 
-    <!-- Interactive Scripts Layout -->
+    <!-- INTERACTIVE JAVASCRIPT FOR SIDEBAR TOGGLE -->
     <script>
-      // 1. Mobile Menu Open/Close Logic
-      const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-      const navMenu = document.getElementById('nav-menu');
-
-      mobileMenuBtn.addEventListener('click', () => {
-          mobileMenuBtn.classList.toggle('active');
-          navMenu.classList.toggle('active');
-      });
-
-      // Close menu automatically when clicking a navigation link
-      document.querySelectorAll('.nav-links a').forEach(link => {
-          link.addEventListener('click', () => {
-              mobileMenuBtn.classList.remove('active');
-              navMenu.classList.remove('active');
-          });
-      });
-
-      // 2. Smooth Scrolling Script
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-          anchor.addEventListener('click', function (e) {
-              const targetId = this.getAttribute('href');
-              if(targetId === '#') return;
-              e.preventDefault();
-              const target = document.querySelector(targetId);
-              if (target) {
-                  target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-              }
-          });
-      });
+        function toggleMenu() {
+            const sidebar = document.getElementById('mobileSidebar');
+            const overlay = document.getElementById('sidebarOverlay');
+            
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+        }
     </script>
-  </body>
+</body>
 </html>
