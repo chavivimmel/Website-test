@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="robots" content="index, follow">
-    <title>Chavivim Volunteer Emergency Services Limited | Benevolent Relief & Safety</title>
-    <meta name="description" content="Chavivim Volunteer Emergency Services Limited provides free crisis relief, roadside safety interventions, emergency response, and community preparedness across Australia.">
+    <title>Chavivim Volunteer Emergency Services | Community Crisis & Roadside Relief</title>
+    <meta name="description" content="Chavivim Volunteer Emergency Services Limited provides free, community crisis relief, roadside safety interventions, severe weather support, and emergency response across Victoria.">
     
     <!-- Structured Data Schema for ACNC Compliance & Web Crawlers -->
     <script type="application/ld+json">
@@ -16,23 +16,18 @@
       "alternateName": "Chavivim Emergency Services",
       "url": "https://chavivim.org.au",
       "logo": "https://chavivim.org.au/logo.png",
-      "description": "A benevolent volunteer public organization providing free emergency relief, crisis intervention, severe weather support, and safety assistance to individuals in distress.",
+      "description": "A volunteer public organization providing free emergency relief, roadside safety intervention, severe weather support, and safety assistance to individuals in distress.",
+      "telephone": "+61342332200",
       "address": {
         "@type": "PostalAddress",
         "addressLocality": "Melbourne",
         "addressRegion": "VIC",
         "addressCountry": "AU"
       },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": "-37.8770",
-        "longitude": "145.0247"
-      },
       "areaServed": {
         "@type": "AdministrativeArea",
         "name": "Victoria"
-      },
-      "nonprofitStatus": "Nonprofit501c3"
+      }
     }
     </script>
 
@@ -48,6 +43,7 @@
             --primary: #1e3a8a;       /* Deep Navy */
             --primary-hover: #1e40af;
             --accent: #dc2626;        /* Emergency Red */
+            --accent-hover: #b91c1c;
             --text-dark: #0f172a;     /* Dark Charcoal */
             --text-muted: #475569;    /* Muted Slate */
             --bg-light: #f8fafc;      /* Off-White */
@@ -62,6 +58,25 @@
             background-color: #ffffff;
             line-height: 1.6;
             overflow-x: hidden;
+        }
+
+        /* TOP ALERT BANNER */
+        .top-banner {
+            background-color: var(--text-dark);
+            color: #ffffff;
+            padding: 0.5rem 1rem;
+            text-align: center;
+            font-size: 0.85rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .top-banner a {
+            color: #93c5fd;
+            font-weight: 600;
+            text-decoration: underline;
         }
 
         /* HEADER & NAVIGATION */
@@ -92,17 +107,18 @@
         }
 
         .brand-title {
-            font-size: 1.25rem;
-            font-weight: 700;
+            font-size: 1.35rem;
+            font-weight: 800;
             letter-spacing: -0.02em;
         }
 
         .brand-subtitle {
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             color: #93c5fd;
             display: block;
             text-transform: uppercase;
             letter-spacing: 0.05em;
+            font-weight: 600;
         }
 
         /* Desktop Nav */
@@ -124,19 +140,22 @@
             color: #93c5fd;
         }
 
-        .emergency-btn {
+        .hotline-btn {
             background-color: var(--accent);
             color: #ffffff !important;
-            padding: 0.5rem 1rem;
+            padding: 0.6rem 1.25rem;
             border-radius: 6px;
-            font-weight: 600;
+            font-weight: 700;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
+            box-shadow: 0 2px 8px rgba(220, 38, 38, 0.4);
+            transition: var(--transition);
         }
 
-        .emergency-btn:hover {
-            background-color: #b91c1c;
+        .hotline-btn:hover {
+            background-color: var(--accent-hover);
+            transform: translateY(-1px);
         }
 
         /* Hamburger Button */
@@ -159,7 +178,7 @@
             border-radius: 2px;
         }
 
-        /* MOBILE SIDEBAR (HALF SCREEN OVERLAY) */
+        /* MOBILE SIDEBAR */
         .sidebar-overlay {
             position: fixed;
             top: 0;
@@ -182,9 +201,8 @@
             position: fixed;
             top: 0;
             left: 0;
-            width: 50vw; /* Takes exactly half screen as requested */
-            min-width: 260px; /* Ensures readablity on smaller screens */
-            max-width: 380px;
+            width: 70vw;
+            max-width: 320px;
             height: 100vh;
             background-color: var(--primary);
             z-index: 1002;
@@ -232,20 +250,33 @@
 
         /* HERO SECTION */
         .hero {
-            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(30, 58, 138, 0.9)), 
+            background: linear-gradient(rgba(15, 23, 42, 0.88), rgba(30, 58, 138, 0.92)), 
                         url('https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=1200&q=80') center/cover no-repeat;
             color: white;
-            padding: 5rem 1.5rem;
+            padding: 5.5rem 1.5rem;
             text-align: center;
         }
 
         .hero-content {
-            max-width: 850px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
+        .hero-badge {
+            display: inline-block;
+            background-color: rgba(255, 255, 255, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 0.35rem 1rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+        }
+
         .hero h1 {
-            font-size: 2.75rem;
+            font-size: 2.85rem;
             line-height: 1.2;
             margin-bottom: 1.25rem;
             font-weight: 800;
@@ -253,8 +284,11 @@
 
         .hero p {
             font-size: 1.2rem;
-            color: #e2e8f0;
-            margin-bottom: 2rem;
+            color: #cbd5e1;
+            margin-bottom: 2.25rem;
+            max-width: 780px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .hero-actions {
@@ -267,31 +301,48 @@
         .btn-primary {
             background-color: var(--accent);
             color: white;
-            padding: 0.85rem 1.75rem;
+            padding: 0.9rem 1.85rem;
             border-radius: 6px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             transition: var(--transition);
+            font-size: 1.05rem;
+            box-shadow: 0 4px 12px rgba(220, 38, 38, 0.3);
         }
 
         .btn-primary:hover {
-            background-color: #b91c1c;
+            background-color: var(--accent-hover);
         }
 
         .btn-secondary {
-            background-color: rgba(255,255,255,0.15);
+            background-color: rgba(255,255,255,0.12);
             color: white;
-            padding: 0.85rem 1.75rem;
+            padding: 0.9rem 1.85rem;
             border-radius: 6px;
             text-decoration: none;
             font-weight: 600;
             backdrop-filter: blur(5px);
             border: 1px solid rgba(255,255,255,0.3);
             transition: var(--transition);
+            font-size: 1.05rem;
         }
 
         .btn-secondary:hover {
             background-color: rgba(255,255,255,0.25);
+        }
+
+        /* EMERGENCY ADVISORY BANNER */
+        .advisory-bar {
+            background-color: #fef2f2;
+            border-bottom: 1px solid #fee2e2;
+            padding: 1rem 1.5rem;
+            text-align: center;
+            color: #991b1b;
+            font-size: 0.92rem;
+        }
+
+        .advisory-bar strong {
+            color: #7f1d1d;
         }
 
         /* MAIN CONTENT LAYOUT */
@@ -301,44 +352,51 @@
             padding: 4rem 1.5rem;
         }
 
-        /* BENEVOLENT CHARITABLE BANNER (ACNC Core Requirement) */
+        /* BENEVOLENT CHARITABLE BANNER */
         .benevolent-card {
             background-color: #eff6ff;
             border-left: 5px solid var(--primary);
             border-radius: 0 8px 8px 0;
-            padding: 2rem;
-            margin-bottom: 3.5rem;
+            padding: 2.25rem;
+            margin-bottom: 4rem;
         }
 
         .benevolent-card h2 {
             color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 0.75rem;
+            font-size: 1.6rem;
+            margin-bottom: 0.85rem;
         }
 
         .benevolent-card p {
             color: var(--text-muted);
             font-size: 1.05rem;
+            margin-bottom: 1rem;
         }
 
-        /* GRID SYSTEM FOR SERVICES & PREPAREDNESS */
+        .benevolent-card p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* SECTION HEADERS */
         .section-header {
             text-align: center;
             margin-bottom: 3rem;
         }
 
         .section-header h2 {
-            font-size: 2rem;
+            font-size: 2.1rem;
             color: var(--primary);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.6rem;
         }
 
         .section-header p {
             color: var(--text-muted);
-            max-width: 700px;
+            max-width: 720px;
             margin: 0 auto;
+            font-size: 1.05rem;
         }
 
+        /* GRID SYSTEM */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
@@ -350,7 +408,7 @@
             background: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 8px;
-            padding: 2rem;
+            padding: 2.25rem 2rem;
             box-shadow: 0 2px 5px rgba(0,0,0,0.03);
             transition: var(--transition);
         }
@@ -361,8 +419,8 @@
         }
 
         .card-icon {
-            width: 48px;
-            height: 48px;
+            width: 52px;
+            height: 52px;
             background-color: #dbeafe;
             color: var(--primary);
             border-radius: 8px;
@@ -370,49 +428,165 @@
             align-items: center;
             justify-content: center;
             font-weight: bold;
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             margin-bottom: 1.25rem;
         }
 
         .card h3 {
-            font-size: 1.25rem;
+            font-size: 1.3rem;
             margin-bottom: 0.75rem;
             color: var(--text-dark);
         }
 
         .card p {
             color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.6;
+            font-size: 0.98rem;
+            line-height: 1.65;
         }
 
-        /* PUBLIC AVAILABILITY & ELIGIBILITY BANNER */
-        .eligibility-box {
+        .card-list {
+            margin-top: 1rem;
+            padding-left: 1.2rem;
+            color: var(--text-muted);
+            font-size: 0.92rem;
+        }
+
+        .card-list li {
+            margin-bottom: 0.4rem;
+        }
+
+        /* HOW DISPATCH WORKS (STEP PROCESS) */
+        .process-section {
+            background-color: var(--bg-light);
+            border-radius: 12px;
+            padding: 3.5rem 2rem;
+            margin: 4rem 0;
+            border: 1px solid var(--border-color);
+        }
+
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 2rem;
+            margin-top: 2.5rem;
+        }
+
+        .step-item {
+            position: relative;
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+        }
+
+        .step-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #93c5fd;
+            line-height: 1;
+            margin-bottom: 0.75rem;
+        }
+
+        .step-item h4 {
+            font-size: 1.15rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+
+        .step-item p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        /* PUBLIC AVAILABILITY & DISPATCH BANNER */
+        .dispatch-box {
             background: linear-gradient(135deg, var(--primary), #0f172a);
             color: white;
-            padding: 3rem 2rem;
+            padding: 3.5rem 2rem;
             border-radius: 12px;
             text-align: center;
             margin: 4rem 0;
         }
 
-        .eligibility-box h2 {
-            font-size: 1.85rem;
+        .dispatch-box h2 {
+            font-size: 2rem;
             margin-bottom: 1rem;
         }
 
-        .eligibility-box p {
-            max-width: 800px;
-            margin: 0 auto 1.5rem;
-            font-size: 1.05rem;
+        .dispatch-box p {
+            max-width: 750px;
+            margin: 0 auto 1.75rem;
+            font-size: 1.1rem;
             color: #cbd5e1;
+        }
+
+        .phone-display {
+            display: inline-block;
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #ffffff;
+            background-color: var(--accent);
+            padding: 0.75rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            margin-bottom: 1rem;
+            box-shadow: 0 4px 15px rgba(220, 38, 38, 0.4);
+            transition: var(--transition);
+        }
+
+        .phone-display:hover {
+            background-color: var(--accent-hover);
+            transform: scale(1.02);
+        }
+
+        /* VOLUNTEER CTA SECTION */
+        .volunteer-section {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 2.5rem;
+            background-color: #f0fdf4;
+            border: 1px solid #bbf7d0;
+            border-radius: 12px;
+            padding: 3rem 2.5rem;
+            margin: 4rem 0;
+        }
+
+        .volunteer-text {
+            flex: 1 1 500px;
+        }
+
+        .volunteer-text h2 {
+            color: #166534;
+            font-size: 1.85rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .volunteer-text p {
+            color: #15803d;
+            font-size: 1.05rem;
+        }
+
+        .btn-success {
+            background-color: #16a34a;
+            color: white;
+            padding: 0.85rem 1.75rem;
+            border-radius: 6px;
+            text-decoration: none;
+            font-weight: 700;
+            display: inline-block;
+            transition: var(--transition);
+        }
+
+        .btn-success:hover {
+            background-color: #15803d;
         }
 
         /* FOOTER */
         footer {
             background-color: var(--text-dark);
             color: #94a3b8;
-            padding: 3.5rem 1.5rem 2rem;
+            padding: 4rem 1.5rem 2rem;
             font-size: 0.9rem;
             border-top: 1px solid #1e293b;
         }
@@ -421,20 +595,20 @@
             max-width: 1150px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
             gap: 2.5rem;
-            margin-bottom: 2.5rem;
+            margin-bottom: 3rem;
         }
 
         .footer-col h4 {
             color: white;
-            font-size: 1rem;
+            font-size: 1.05rem;
             margin-bottom: 1.25rem;
         }
 
         .footer-col p, .footer-col ul {
             list-style: none;
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
         .footer-col a {
@@ -467,11 +641,16 @@
             }
 
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.1rem;
             }
 
             .hero p {
-                font-size: 1rem;
+                font-size: 1.05rem;
+            }
+
+            .phone-display {
+                font-size: 1.6rem;
+                padding: 0.6rem 1.25rem;
             }
 
             .grid {
@@ -482,10 +661,16 @@
 </head>
 <body>
 
+    <!-- TOP ALERT BAR -->
+    <div class="top-banner">
+        <span>Need Assistance or Roadside Relief?</span>
+        <a href="tel:0342332200">Call Dispatch: (03) 4233 2200</a>
+    </div>
+
     <!-- OVERLAY FOR MOBILE SIDEBAR -->
     <div class="sidebar-overlay" id="sidebarOverlay" onclick="toggleMenu()"></div>
 
-    <!-- MOBILE SIDEBAR (HALF SCREEN OVERLAY) -->
+    <!-- MOBILE SIDEBAR -->
     <aside class="mobile-sidebar" id="mobileSidebar">
         <div class="sidebar-header">
             <span style="color: white; font-weight: bold; font-size: 1.1rem;">Chavivim</span>
@@ -493,10 +678,11 @@
         </div>
         <nav class="mobile-nav">
             <a href="#about" onclick="toggleMenu()">About Our Purpose</a>
-            <a href="#services" onclick="toggleMenu()">Crisis Relief</a>
+            <a href="#services" onclick="toggleMenu()">Crisis Relief Services</a>
+            <a href="#how-it-works" onclick="toggleMenu()">How Dispatch Works</a>
             <a href="#preparedness" onclick="toggleMenu()">Public Education</a>
-            <a href="#eligibility" onclick="toggleMenu()">Public Access</a>
-            <a href="tel:000" class="emergency-btn" style="margin-top: 1rem; justify-content: center;">24/7 Relief Line</a>
+            <a href="#volunteer" onclick="toggleMenu()">Join As Volunteer</a>
+            <a href="tel:0342332200" class="hotline-btn" style="margin-top: 1rem; justify-content: center;">Call (03) 4233 2200</a>
         </nav>
     </aside>
 
@@ -512,12 +698,13 @@
 
             <!-- Desktop Navigation -->
             <nav class="desktop-nav">
-                <a href="#about">About Our Purpose</a>
-                <a href="#services">Crisis Relief Services</a>
-                <a href="#preparedness">Community Preparedness</a>
-                <a href="#eligibility">Public Access</a>
-                <a href="tel:000" class="emergency-btn">
-                    <span>Emergency Relief</span>
+                <a href="#about">About Us</a>
+                <a href="#services">Services</a>
+                <a href="#how-it-works">Dispatch Process</a>
+                <a href="#preparedness">Community Education</a>
+                <a href="#volunteer">Get Involved</a>
+                <a href="tel:0342332200" class="hotline-btn">
+                    <span>Call (03) 4233 2200</span>
                 </a>
             </nav>
 
@@ -530,14 +717,20 @@
         </div>
     </header>
 
+    <!-- EMERGENCY ADVISORY BAR -->
+    <div class="advisory-bar">
+        <strong>Important Notice:</strong> For life-threatening emergencies, medical incidents, or active crimes, please call Triple Zero (000) immediately. Chavivim provides community roadside safety, crisis intervention, and non-medical emergency relief.
+    </div>
+
     <!-- HERO SECTION -->
     <section class="hero">
         <div class="hero-content">
-            <h1>Relieving Distress & Protecting Vulnerable Lives in Crisis</h1>
-            <p>A registered Australian benevolent volunteer organization dedicated to providing immediate practical relief, severe weather intervention, and hardship assistance to individuals facing hazardous emergencies.</p>
+            <span class="hero-badge">Volunteer Response & Community Care</span>
+            <h1>Immediate Practical Relief When You Need It Most</h1>
+            <p>Chavivim Volunteer Emergency Services Limited provides free, immediate roadside assistance, crisis intervention, and severe weather support to individuals in distress across Victoria.</p>
             <div class="hero-actions">
-                <a href="#services" class="btn-primary">View Crisis Services</a>
-                <a href="#preparedness" class="btn-secondary">Emergency Preparedness</a>
+                <a href="tel:0342332200" class="btn-primary">Call Dispatch: (03) 4233 2200</a>
+                <a href="#services" class="btn-secondary">Explore Services</a>
             </div>
         </div>
     </section>
@@ -545,71 +738,133 @@
     <!-- MAIN BODY CONTAINER -->
     <main class="container">
 
-        <!-- BENEVOLENT PURPOSE STATEMENT (ACNC Core Legal Requirement) -->
+        <!-- BENEVOLENT PURPOSE STATEMENT -->
         <section id="about" class="benevolent-card">
             <h2>Our Charitable Benevolent Purpose</h2>
             <p>
-                Chavivim Volunteer Emergency Services Limited is established exclusively as a public benevolent institution to provide free, immediate, and practical relief to individuals suffering from acute distress, physical hazard, helpless conditions, or personal crisis. Operating as a volunteer-driven service, our relief missions are designed to alleviate suffering, prevent bodily harm, and protect vulnerable motorists and community members facing sudden hardship.
+                Chavivim Volunteer Emergency Services Limited is a registered public benevolent institution established to provide free, immediate, and practical relief to individuals suffering from sudden distress, hazardous conditions, or physical helplessness.
+            </p>
+            <p>
+                Our trained volunteers respond swiftly to roadside breakdowns, vehicle lockouts, battery failures, severe weather hazards, and localized community crises—ensuring vulnerable community members are never left stranded or unsafe.
             </p>
         </section>
 
         <!-- CRISIS RELIEF SERVICES SECTION -->
         <section id="services">
             <div class="section-header">
-                <h2>Practical Crisis & Hardship Relief</h2>
-                <p>We intervene directly when unexpected roadside breakdowns, hazardous physical entrapments, or severe weather conditions place individuals in immediate distress or helplessness.</p>
+                <h2>Our Crisis Relief Services</h2>
+                <p>We provide rapid, zero-cost physical assistance to ensure safety and prevent harm during sudden roadside and environmental emergencies.</p>
             </div>
 
             <div class="grid">
                 <div class="card">
-                    <div class="card-icon">&#9888;</div>
-                    <h3>Roadside Crisis Intervention</h3>
-                    <p>Providing rapid physical protection and technical intervention for stranded drivers in vulnerable or dangerous highway locations, preventing exposure to traffic hazards, physical assault, or severe climatic elements.</p>
+                    <div class="card-icon">&#128663;</div>
+                    <h3>Roadside Hazard Protection</h3>
+                    <p>Providing safe positioning, traffic warnings, and technical aid for stranded motorists in dangerous highway or isolated locations.</p>
+                    <ul class="card-list">
+                        <li>Flat tire changes & pressure checks</li>
+                        <li>Emergency jump-starts & battery checks</li>
+                        <li>Fuel delivery to safe locations</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <div class="card-icon">&#128272;</div>
+                    <h3>Lockout & Entrapment Assistance</h3>
+                    <p>Immediate intervention for accidental vehicle lockouts, protecting vulnerable passengers, pets, and stranded drivers from dangerous weather exposure.</p>
+                    <ul class="card-list">
+                        <li>Non-destructive vehicle unlocking</li>
+                        <li>Child & pet accidental lockout response</li>
+                        <li>Key extraction assistance</li>
+                    </ul>
                 </div>
 
                 <div class="card">
                     <div class="card-icon">&#127783;</div>
-                    <h3>Severe Weather & Flood Rescue</h3>
-                    <p>Deploying specialized volunteer response teams during severe weather warnings and flood conditions to assist stranded motorists, assist localized evacuations, and safely extricate vulnerable citizens from hazard zones.</p>
-                </div>
-
-                <div class="card">
-                    <div class="card-icon">&#10084;</div>
-                    <h3>Vulnerability & Hardship Support</h3>
-                    <p>Prioritizing immediate crisis aid for high-risk demographics—including elderly drivers, single parents stranded with young children, people with disabilities, and individuals without financial means or support systems during breakdowns.</p>
+                    <h3>Severe Weather & Storm Response</h3>
+                    <p>Deploying volunteer response teams during heavy storms, local flooding, and severe weather warnings to protect life and property.</p>
+                    <ul class="card-list">
+                        <li>Stranded driver extraction</li>
+                        <li>Local storm debris clearing</li>
+                        <li>Emergency transport assistance</li>
+                    </ul>
                 </div>
             </div>
         </section>
 
-        <!-- PUBLIC PREPAREDNESS & AWARENESS (Addresses Legal Requirement Point 4) -->
+        <!-- HOW DISPATCH WORKS -->
+        <section id="how-it-works" class="process-section">
+            <div class="section-header">
+                <h2>How Our Dispatch Works</h2>
+                <p>From the moment you call, our dedicated dispatch center coordinates rapid local volunteer response.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-item">
+                    <div class="step-number">01</div>
+                    <h4>Call Our Dispatch</h4>
+                    <p>Dial <strong>(03) 4233 2200</strong> to speak directly with our dispatch operators who will take details of your situation.</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">02</div>
+                    <h4>Location Assessment</h4>
+                    <p>Our dispatch team assesses your exact location, safety status, and immediate physical requirements.</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">03</div>
+                    <h4>Volunteer Dispatch</h4>
+                    <p>The nearest equipped volunteer response unit is deployed directly to your location to provide hands-on assistance.</p>
+                </div>
+
+                <div class="step-item">
+                    <div class="step-number">04</div>
+                    <h4>Safe Resolution</h4>
+                    <p>Our team works on-site to resolve the issue safely and ensure you can resume your journey safely without cost.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PUBLIC PREPAREDNESS & AWARENESS -->
         <section id="preparedness">
             <div class="section-header">
-                <h2>Public Awareness & Emergency Preparedness</h2>
-                <p>Equipping Australian communities with the knowledge, resources, and preventative skills necessary to survive environmental hazards and roadside emergencies safely.</p>
+                <h2>Community Preparedness & Education</h2>
+                <p>Empowering the public with knowledge and skills to prevent emergency situations and stay safe on the road.</p>
             </div>
 
             <div class="grid">
                 <div class="card">
                     <div class="card-icon">&#128216;</div>
-                    <h3>Community Safety Outreach</h3>
-                    <p>Conducting public workshops and safety awareness campaigns focused on emergency roadside survival protocols, vehicle safety checks, and crisis management techniques.</p>
+                    <h3>Roadside Safety Education</h3>
+                    <p>Educational outreach providing motorists with essential protocols on how to handle vehicle breakdowns safely while waiting for assistance.</p>
                 </div>
 
                 <div class="card">
                     <div class="card-icon">&#128226;</div>
-                    <h3>Severe Weather Survival Education</h3>
-                    <p>Distributing accessible educational materials advising the public on how to navigate flooded roadways safely, prepare emergency kits, and mitigate risks during localized storm disasters.</p>
+                    <h3>Extreme Weather Preparedness</h3>
+                    <p>Guidance and resources advising drivers on navigating severe weather alerts, flood risk management, and seasonal driving safety.</p>
                 </div>
             </div>
         </section>
 
-        <!-- PUBLIC ACCESS & ELIGIBILITY (Addresses Legal Requirement Point 5) -->
-        <section id="eligibility" class="eligibility-box">
-            <h2>Available to All Eligible Members of the Public</h2>
-            <p>
-                All emergency relief, crisis assistance, and preparedness services provided by Chavivim Volunteer Emergency Services Limited are delivered entirely <strong>free of charge</strong>. Our charitable relief is available to any eligible member of the public in distress across our operational coverage area, strictly without discrimination regarding background, belief, or affiliation.
-            </p>
-            <a href="tel:000" class="btn-primary" style="background-color: white; color: var(--primary);">Contact Emergency Relief Unit</a>
+        <!-- DIRECT DISPATCH CALLOUT -->
+        <section class="dispatch-box">
+            <h2>Stranded or Need Emergency Assistance?</h2>
+            <p>Our volunteer dispatchers are on standby to take your call and coordinate local support across Victoria.</p>
+            <a href="tel:0342332200" class="phone-display">(03) 4233 2200</a>
+            <p style="font-size: 0.9rem; margin-bottom: 0;">Free Community Assistance &bull; Available Across Victoria</p>
+        </section>
+
+        <!-- VOLUNTEER RECRUITMENT -->
+        <section id="volunteer" class="volunteer-section">
+            <div class="volunteer-text">
+                <h2>Join Our Volunteer Response Team</h2>
+                <p>Chavivim relies on dedicated community members willing to lend a helping hand. Whether you have technical skills, driving experience, or a desire to serve in dispatch, we welcome your support.</p>
+            </div>
+            <div>
+                <a href="mailto:info@chavivim.org.au?subject=Volunteer Application" class="btn-success">Become a Volunteer</a>
+            </div>
         </section>
 
     </main>
@@ -619,30 +874,36 @@
         <div class="footer-container">
             <div class="footer-col">
                 <h4>Chavivim Emergency Services</h4>
-                <p>A registered Australian public benevolent institution committed to relieving distress, hardship, and helplessness through volunteer crisis response and public safety initiatives.</p>
+                <p>A registered Australian public benevolent institution dedicated to relieving distress, hardship, and helpless conditions through volunteer response and community care.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Direct Dispatch</h4>
+                <p><strong>Hotline:</strong> (03) 4233 2200</p>
+                <p><strong>Email:</strong> info@chavivim.org.au</p>
+                <p><strong>Coverage:</strong> Victoria, Australia</p>
             </div>
             <div class="footer-col">
                 <h4>Legal & Regulatory</h4>
-                <p><strong>ACN:</strong> Registered in Australia</p>
-                <p><strong>ABN:</strong> [Insert ABN Here]</p>
+                <p><strong>Entity:</strong> Chavivim Volunteer Emergency Services Limited</p>
                 <p>Regulated by the Australian Charities and Not-for-profits Commission (ACNC).</p>
             </div>
             <div class="footer-col">
                 <h4>Quick Links</h4>
                 <ul>
-                    <li><a href="#about">Benevolent Objects</a></li>
-                    <li><a href="#services">Crisis Relief Services</a></li>
-                    <li><a href="#preparedness">Public Education</a></li>
-                    <li><a href="#eligibility">Public Accessibility</a></li>
+                    <li><a href="#about">Benevolent Purpose</a></li>
+                    <li><a href="#services">Crisis Services</a></li>
+                    <li><a href="#how-it-works">Dispatch Process</a></li>
+                    <li><a href="#preparedness">Community Education</a></li>
+                    <li><a href="#volunteer">Join Us</a></li>
                 </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            <p>&copy; 2026 Chavivim Volunteer Emergency Services Limited. All rights reserved. Services offered free to the public in distress.</p>
+            <p>&copy; 2026 Chavivim Volunteer Emergency Services Limited. All services provided free to the public in distress.</p>
         </div>
     </footer>
 
-    <!-- INTERACTIVE JAVASCRIPT FOR SIDEBAR TOGGLE -->
+    <!-- INTERACTIVE JAVASCRIPT -->
     <script>
         function toggleMenu() {
             const sidebar = document.getElementById('mobileSidebar');
